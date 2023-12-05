@@ -1,0 +1,53 @@
+@use "../../styles/variables";
+
+.profile_button {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+.profile_button-icon {
+    color: white;
+}
+.profile_img {
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    user-select: none;
+}
+.profile_options {
+    position: absolute;
+    visibility: hidden;
+    width: 160px;
+    bottom: 0;
+    right: 0;
+    background: variables.$golden_ui;
+    border: 1px solid #fcf803;
+    padding: 12px 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px variables.$golden_ui;
+    opacity: 0;
+    transform: translate(0, 100%);
+    pointer-events: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.profile_options.shown {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+.profile_option {
+    cursor: pointer;
+    padding: 7px 15px;
+}
+.profile_option:hover {
+    background-color: variables.$golden_ui;
+}
+.profile_link {
+    text-decoration: unset;
+    color: unset;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}

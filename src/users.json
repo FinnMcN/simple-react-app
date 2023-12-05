@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "login": "Admin",
+            "password": "12345",
+            "avatar": "https://sun9-66.userapi.com/impf/c831409/v831409956/16edba/nLcqm1gu8Hs.jpg?size=564x797&quality=96&sign=15a5129d924886adfd0c7b90ea03b490&type=album"
+        },
+        {
+            "login": "Admin2",
+            "password": "54321",
+            "avatar": "https://sun9-64.userapi.com/impg/U_Ah88qzWcBj2_w-1jFHau72K3BnXbkWMKFrWw/czgzum94CEs.jpg?size=960x730&quality=95&sign=c9847052406da06ff2347fb050182494&type=album"
+        }
+    ]
+}
