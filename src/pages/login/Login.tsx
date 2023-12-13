@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import LoginError from "../../components/LoginError/LoginError";
 import { IUserData, IUserDataInLS } from "../../interfaces/interfaces";
-import "./styles.scss";
+import "./login.scss";
 
 const Login = ({ setUserData }: { setUserData: (login: string, avatar: string) => void }) => {
     //form ref elements
@@ -15,6 +15,25 @@ const Login = ({ setUserData }: { setUserData: (login: string, avatar: string) =
 
     //navigation
     const navigate = useNavigate();
+
+    const checkUserData = async () => {
+        try {
+            const inputData = {
+                user: login.current?.value!,
+                password: password.current?.value!,
+            };
+            const response = await fetch("http://localhost:3010/users", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    // 'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: JSON.stringify(inputData),
+            });
+        } catch (error) {
+            console.error(`Couldn't fetch users data. Error logs:${error}`);
+        }
+    };
 
     const fetchUsersData = async (): Promise<IUserData[] | undefined> => {
         try {

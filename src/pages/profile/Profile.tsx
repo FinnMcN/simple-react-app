@@ -1,4 +1,4 @@
-import "./styles.scss";
+import "./profile.scss";
 
 interface IProfileProps {
     username: string | null;

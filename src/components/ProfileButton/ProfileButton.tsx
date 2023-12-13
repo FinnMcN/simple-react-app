@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { Link } from "react-router-dom";
 import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./styles.scss";
+import "./profileButton.scss";
 
 interface IProfileButton {
     username: string | null;

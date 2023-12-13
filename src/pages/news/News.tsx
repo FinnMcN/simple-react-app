@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./styles.scss";
+import "./news.scss";
 
 interface IPost {
     userId: number;
@@ -17,7 +17,6 @@ const News = () => {
             try {
                 const response = await fetch("http://jsonplaceholder.typicode.com/posts?userId=1");
                 const data = await response.json();
-
                 console.log(data);
                 setNewsData(data);
             } catch (error) {}

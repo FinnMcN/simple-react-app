@@ -1,12 +1,15 @@
 @use "../../styles/variables";
 
 .header {
+    background-color: variables.$header_bg;
+}
+.header-content {
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
-    background-color: variables.$header_bg;
+
     align-items: center;
     position: relative;
-    padding: 0 10px;
 }
 .links {
     display: flex;

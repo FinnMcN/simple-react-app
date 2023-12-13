@@ -1,7 +1,7 @@
 const path = require("path");
 const jsonServer = require("json-server");
+const bodyParser = require("body-parser");
 
-//instead of: const server = jsonServer.create()
 const express = require("express");
 const server = express();
 
@@ -11,7 +11,6 @@ const middlewares = jsonServer.defaults();
 //applying route of mock data 
 const router = jsonServer.router(path.join(__dirname, "./src/users.json"));
 
-//instead of: const middlewares = jsonServer.defaults()
 const cors = require("cors");
 const corsOptions = {
     origin: "*",
@@ -19,17 +18,26 @@ const corsOptions = {
     optionSuccessStatus: 200,
 };
 
+server.use(bodyParser.json());
+server.use(
+    bodyParser.urlencoded({
+        extended: true,
+    }),
+);
+server.use(cors(corsOptions));
+
 const validateInputData = (req, res, next) => {
     const data = req.body;
     res.send();
-}
+};
 
-//instead of: server.use(middlewares)
-//mount corse options
-server.use(cors(corsOptions));
-
-
-server.get("/users", (req, res, next) => {
+server.use("/users", (req, res, next) => {
+    console.log("request");
+    next();
+});
+server.post("/users", (req, res, next) => {
+    console.log(req.method);     
+    console.log(req.body)
     
 });
 

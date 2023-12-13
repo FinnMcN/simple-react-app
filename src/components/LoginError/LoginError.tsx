@@ -1,4 +1,4 @@
-import "./styles.scss";
+import "./loginError.scss";
 import { regular } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
